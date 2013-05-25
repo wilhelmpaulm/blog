@@ -1,0 +1,20 @@
+<%= link_to 'Make another baby post!', new_post_path , style:"background-color: yellow"%>
+
+<table>
+  <tr>
+    <th style="background-color: yellow">Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.text %></td>
+    <td><%= link_to 'Show', post_path(post.id) %></td>
+    <td><%= link_to 'Edit', edit_post_path(post.id) %></td>
+  </tr>
+<% end %>
+</table>
+
