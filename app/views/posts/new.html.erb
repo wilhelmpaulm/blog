@@ -16,8 +16,20 @@
   </p>
 <% end %>
 
-
+<% if @post.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "potato") %> prohibited
+      this post from being saved:</h2>
+    <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <div>
 	<h1>that shit up there is fuckin hard</h1>
+
+<%= link_to "Back to black!", posts_path %>
 </div>
